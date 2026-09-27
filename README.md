@@ -1,4 +1,4 @@
-﻿# 🦠 Macro Malware: LLM-Driven Generation & Evasion Analysis
+# 🦠 Macro Malware: LLM-Driven Generation & Evasion Analysis
 
 > An academic research project automating VBA macro malware generation using a multi-stage LLM Agent pipeline with MITRE ATT&CK-aligned TTPs and obfuscation strategies — for defensive security research purposes only.
 
@@ -154,16 +154,26 @@ Each base sample is generated from **1 TTP combo = 1 Execution + 1 Discovery + 1
 ```
 ├── README.md
 ├── report/
-│   └── project_230_final_report.pdf    # Full technical report
+│   ├── FinalProjects_Reports_NT230.pdf     # Group project report
+│   └── VBAMalware_Final_Report.pdf         # Detailed technical report
 ├── pipeline/
-│   ├── phase1_generation/              # PLANNER + CODER + CHECKER nodes
-│   └── phase2_obfuscation/             # 3 obfuscation strategy scripts
+│   ├── Phase1_Generate_Bases.py            # Base generation pipeline
+│   ├── VT_Parallel_Pipeline.py             # VirusTotal scanning pipeline
+│   ├── phase1_generation/
+│   │   ├── Demo_Phase1_Base_043.py         # Demo: single sample generation
+│   └── phase2_obfuscation/
+│       ├── Phase2_Generate_Obfuscation.py  # Obfuscation pipeline (all 3 strategies)
+│       └── Demo_Phase2_Base_043.py         # Demo: obfuscation on sample #043
+├── samples/                                # Representative VBA source files
+│   ├── demo_ASCII_Encoding.vba
+│   ├── demo_Random_Renaming.vba
+│   └── demo_String_Concatenation.vba
 ├── dataset/
-│   ├── base_samples.csv                # 100 validated base macros
-│   └── LLMalMorph_Obfuscated.csv       # ~298 obfuscated variants
-└── analysis/
-    └── detection_results.md            # AV/AMSI detection findings
+│   └── LLMalMorph_Obfuscated_Dataset.csv  # ~298 obfuscated variants
+└── assets/
+    └── pipeline_flow.jpg                   # Pipeline architecture diagram
 ```
+
 
 ---
 
